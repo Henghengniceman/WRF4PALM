@@ -59,7 +59,9 @@ if not os.path.exists("./dynamic_files"):
 #--------------------------------------------------------------------------------
 settings_cfg = configparser.ConfigParser(inline_comment_prefixes='#')
 config = configparser.RawConfigParser()
-config.read(sys.argv[1])
+config.read('namelist.'+sys.argv[1])
+# import pdb 
+# pdb.set_trace()
 case_name =  ast.literal_eval(config.get("case", "case_name"))[0]
 max_pool  =  ast.literal_eval(config.get("case", "max_pool" ))[0]
 geostr_lvl =  ast.literal_eval(config.get("case", "geostrophic" ))[0] 
@@ -135,6 +137,8 @@ else:
 
 ## use salem to read WRF
 # remove duplicated timestamps
+# import pdb
+# pdb.set_trace()
 ds_wrf = xr.Dataset()
 with salem.open_mf_wrf_dataset(wrf_files) as ds_raw:
     ## in case xtime is created as time dimension
