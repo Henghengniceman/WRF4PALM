@@ -15,7 +15,8 @@ def surface_nan_uv(data,z, uv10):
     '''
     nan_idx = np.argwhere(np.isnan(data))
     if nan_idx.size > 0 :
-        nan_idx = int(nan_idx[-1])+1
+        # nan_idx = int(nan_idx[-1])+1
+        nan_idx = int(nan_idx[-1])
         terrain_height = z[nan_idx]
         a = (data[nan_idx]-uv10)/np.log(terrain_height/(terrain_height+10))
         b = uv10-a*np.log(10+terrain_height)
@@ -29,7 +30,7 @@ def surface_nan_s(data,z,s2):
     '''
     nan_idx = np.argwhere(np.isnan(data))
     if nan_idx.size > 0 :
-        nan_idx = int(nan_idx[-1] + 1)
+        nan_idx = int(nan_idx[-1])
         terrain_height = z[nan_idx]
         a = (s2-data[nan_idx])/(2)
         b = s2-a*(2+terrain_height)
@@ -42,8 +43,8 @@ def surface_nan_w(data):
     '''
     nan_idx = np.argwhere(np.isnan(data))
     if nan_idx.size > 0 :
-        nan_idx = int(nan_idx[-1] + 1)
-        data[:nan_idx] = data[nan_idx+1]
+        nan_idx = int(nan_idx[-1])
+        data[:nan_idx] = data[nan_idx]
     return(data)
 
 def solve_surface(all_ts, ds_we, ds_sn, surface_var_dict, var):

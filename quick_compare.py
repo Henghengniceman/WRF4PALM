@@ -53,7 +53,8 @@ plt.rcParams.update(params)
 
 settings_cfg = configparser.ConfigParser(inline_comment_prefixes='#')
 config = configparser.RawConfigParser()
-config.read(sys.argv[1])# read namelist
+#config.read('namelist.'+sys.argv[1])# read namelist
+config.read('namelist.wrf4palm')# read namelist
 case_name =  ast.literal_eval(config.get("case", "case_name"))[0]
 max_pool =  ast.literal_eval(config.get("case", "max_pool"))[0]
 
@@ -399,8 +400,8 @@ def ts(ds_drop, ds_dynamic, var, level=0):
     plt.tight_layout()
     plt.show()
 
-plot_type = sys.argv[2]
-plot_var = sys.argv[3]
+plot_type = 'ts'
+plot_var = 'U'
 
 if plot_type == "zcross":
     ts = input("Please enter the timestamp (yyyy-mm-dd-hh): ")

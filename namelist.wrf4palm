@@ -1,6 +1,6 @@
 [case]
 case_name = "wrf4palm",
-max_pool = 24,
+max_pool = 1,
 geostrophic = "p", ## calculate geostrophic wind using the variable pressure (option "p") or geopotential height  (option "z")
 
 [domain]
