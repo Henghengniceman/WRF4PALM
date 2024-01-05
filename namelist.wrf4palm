@@ -4,15 +4,15 @@ max_pool = 1,
 geostrophic = "p", ## calculate geostrophic wind using the variable pressure (option "p") or geopotential height  (option "z")
 
 [domain]
-palm_proj = "EPSG:2193",    # projection of PALM
-centlat   = 36.247,                           # latitude of domain centre
-centlon   = 138.747,                           # longitude of domain centre
-nx        = 108,                                  # number of grid points along x-axis
-ny        = 108,                                  # number of grid points along y-axis
-nz        = 50,                                  # number of grid points along z-axis
-dx        = 729.0,                                 # number of grid points along x-axis
-dy        = 729.0,                                 # number of grid points along y-axis
-dz        = 162.0,                                 # number of grid points along z-axis
+palm_proj = "EPSG:3095",    # projection of PALM
+centlat   = 35.71,                           # latitude of domain centre
+centlon   = 139.49,                           # longitude of domain centre
+nx        = 256,                                  # number of grid points along x-axis
+ny        = 256,                                  # number of grid points along y-axis
+nz        = 128,                                  # number of grid points along z-axis
+dx        = 40.0,                                 # number of grid points along x-axis
+dy        = 40.0,                                 # number of grid points along y-axis
+dz        = 40.0,                                 # number of grid points along z-axis
 z_origin  = 0.0,                                  # elevated mean grid position (elevated terrain)
 
 [stretch]
@@ -32,12 +32,12 @@ interp_mode = "linear",
 start_year = 2020,
 start_month = 5,
 start_day = 1,
-start_hour = 12,
+start_hour = 13,
 
 end_year = 2020,
 end_month = 5,
 end_day = 3,
-end_hour = 23,
+end_hour = 22,
 
 dynamic_ts = 3600.0,         # PALM dynamic driver update frequency
 

@@ -400,7 +400,7 @@ def ts(ds_drop, ds_dynamic, var, level=0):
     plt.tight_layout()
     plt.show()
 
-plot_type = 'ts'
+plot_type = 'pr'
 plot_var = 'U'
 
 if plot_type == "zcross":

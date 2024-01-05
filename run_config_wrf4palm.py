@@ -43,18 +43,17 @@ from dynamic_util.surface_nan_solver import *
 import warnings
 ## supress warnings
 ## switch to other actions if needed
+warnings.filterwarnings("ignore", '.*pyproj.*')
+
+start = datetime.now()
+
+if not os.path.exists("./cfg_files"):
+    print("cfg_files folder created")
+    os.makedirs("./cfg_files")
+if not os.path.exists("./dynamic_files"):    
+    print("dynamic_files folder created")
+    os.makedirs("./dynamic_files")
 def wrf4plam():
-    warnings.filterwarnings("ignore", '.*pyproj.*')
-    
-    start = datetime.now()
-    
-    if not os.path.exists("./cfg_files"):
-        print("cfg_files folder created")
-        os.makedirs("./cfg_files")
-    if not os.path.exists("./dynamic_files"):    
-        print("dynamic_files folder created")
-        os.makedirs("./dynamic_files")
-    
     #--------------------------------------------------------------------------------
     # Read user input namelist
     #--------------------------------------------------------------------------------
